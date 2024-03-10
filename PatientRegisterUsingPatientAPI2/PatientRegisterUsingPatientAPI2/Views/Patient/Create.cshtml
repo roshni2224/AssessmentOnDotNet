@@ -1,0 +1,48 @@
+﻿@model PatientRegisterUsingPatientAPI2.Models.Patient
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Patient</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group">
+                <label asp-for="patientID" class="control-label"></label>
+                <input asp-for="patientID" class="form-control" />
+                <span asp-validation-for="patientID" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="patientName" class="control-label"></label>
+                <input asp-for="patientName" class="form-control" />
+                <span asp-validation-for="patientName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="diseaseInformation" class="control-label"></label>
+                <input asp-for="diseaseInformation" class="form-control" />
+                <span asp-validation-for="diseaseInformation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="epilepsy" class="control-label"></label>
+                <input asp-for="epilepsy" class="form-control" />
+                <span asp-validation-for="epilepsy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
